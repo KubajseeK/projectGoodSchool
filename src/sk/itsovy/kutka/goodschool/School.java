@@ -42,7 +42,16 @@ public class School implements SchoolStat {
 
     @Override
     public double getAverageGrade() {
-        return 0;
+        double counter = 0;
+        double[] arr = new double[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            arr[i] = list.get(i).getAverageGrade();
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            count += arr[i];
+        }
+        return counter / (double) list.size();
     }
 
     @Override
