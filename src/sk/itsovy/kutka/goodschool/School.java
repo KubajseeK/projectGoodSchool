@@ -1,5 +1,6 @@
 package sk.itsovy.kutka.goodschool;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class School implements SchoolStat {
@@ -71,7 +72,8 @@ public class School implements SchoolStat {
 
     @Override
     public List getListSortedByLastNameAsc() {
-        return null;
+        list.sort(Comparator.comparing(Student::getLastName));
+        return list;
     }
 
     @Override
