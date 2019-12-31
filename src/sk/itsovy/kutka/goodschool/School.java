@@ -1,5 +1,6 @@
 package sk.itsovy.kutka.goodschool;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -78,7 +79,9 @@ public class School implements SchoolStat {
 
     @Override
     public List getListSortedByAbsenceDesc() {
-        return null;
+        list.sort(Comparator.comparing(Student::getAbsence));
+        Collections.reverse(list);
+        return list;
     }
 }
 
